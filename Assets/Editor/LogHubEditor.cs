@@ -95,9 +95,7 @@ namespace MGS.Log.Editors
             var settings = LoadSettings();
             if (settings == null)
             {
-                var path = $"{Application.dataPath}/../{SETTINGS_PATH}";
-                RequireDirectory(path);
-
+                RequireDirectory(SETTINGS_PATH);
                 settings = CreateInstance<LogSettings>();
                 AssetDatabase.CreateAsset(settings, SETTINGS_PATH);
                 Debug.Log($"LogHubEditor Create LogSettings at path {SETTINGS_PATH}");
